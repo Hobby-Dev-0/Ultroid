@@ -16,4 +16,4 @@ echo "
 
 "
 
-python3 -m pyUltroid
+python3 -m Ultroid
