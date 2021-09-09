@@ -9,9 +9,8 @@ FROM programmingerror/ultroid:b0.1
 ENV TZ=Asia/Kolkata
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-# clone the repo and change workdir
-RUN git clone https://github.com/TeamUltroid/Ultroid.git /root/TeamUltroid/
-WORKDIR /root/TeamUltroid/
+# change workdir
+WORKDIR /root/InternetAmethyst/
 
 # install main requirements.
 COPY requirements.txt /deploy/
