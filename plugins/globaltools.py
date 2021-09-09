@@ -506,8 +506,6 @@ async def gkick(e):
     chats = 0
     if userid == ultroid_bot.uid:
         return await eod(xx, "`I can't gkick myself.`", time=3)
-    if str(userid) in DEVLIST:
-        return await eod(xx, "`I can't gkick my Developers.`", time=3)
     async for gkick in e.client.iter_dialogs():
         if gkick.is_group or gkick.is_channel:
             try:
