@@ -10,6 +10,7 @@ ENV TZ=Asia/Kolkata
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # change workdir
+RUN git clone https://github.com/InternetAmethyst/Ultroid /root/InternetAmethyst
 WORKDIR /root/InternetAmethyst/
 
 # install main requirements.
