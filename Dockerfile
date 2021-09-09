@@ -6,7 +6,11 @@
 # Using To Speedup the deploy
 FROM debian:buster-slim
 
+# For Official
 FROM programmingerror/ultroid:b0.1
+
+# For Devs
+FROM theteamultroid/ultroid:main
 
 # set timezone
 ENV TZ=Asia/Kolkata
