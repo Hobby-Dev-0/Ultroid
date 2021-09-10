@@ -80,15 +80,8 @@ async def _(event):
         )
         return
     xx = await eor(event, "`Processing...`")
-    try:
-        for dan in DANGER:
-            if re.search(dan, yy):
-                os.remove(downloaded_file_name)
-                return await ok.edit(
-                    f"**Eval Aborted.**\n**Reason:** Occurance of `{dan}` in `{downloaded_file_name}`.\n\nIf you trust .",
-                )
-    except BaseException:
-        pass
+    if event.text != DANGER:
+        return await eor("Dont Do This Can Harm You")
     try:
         cmd = event.text.split(" ", maxsplit=1)[1]
     except IndexError:
