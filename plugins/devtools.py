@@ -32,6 +32,24 @@ from carbonnow import Carbon
 
 from . import *
 
+DANGER = [
+  "bot.me",
+  "get_me",
+  "borg.me",
+  "STRING_SESSION",
+  "HEROKU_API_KEY",
+  "environ",
+  "DeleteAccountRequest",
+  "session",
+  "stderr",
+  "stdout",
+  "client.me",
+  "session.save()",
+  "session.save",
+  "SESSION",
+  "ultroid_bot.me"
+  ]
+
 
 @ultroid_cmd(
     pattern="sysinfo$",
@@ -62,6 +80,15 @@ async def _(event):
         )
         return
     xx = await eor(event, "`Processing...`")
+    try:
+        for dan in DANGER:
+            if re.search(dan, yy):
+                os.remove(downloaded_file_name)
+                return await ok.edit(
+                    f"**Eval Aborted.**\n**Reason:** Occurance of `{dan}` in `{downloaded_file_name}`.\n\nIf you trust .",
+                )
+    except BaseException:
+        pass
     try:
         cmd = event.text.split(" ", maxsplit=1)[1]
     except IndexError:
